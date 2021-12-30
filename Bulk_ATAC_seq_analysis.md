@@ -14,7 +14,7 @@ plotHeatmap -m ATAC_all_TSS.mat.gz -out ATAC_all_TSS.svg \
  --colorList  'white,red' 'white,red'
 ~~~
 
-![image-20211223212427135](J:%5C%E9%99%88%E9%9B%AA%E5%85%B0%5C%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95_WIN%5C%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95_WIN%5Cproject%5C14_bladder_wangmanli%5C2_bladder_resistance%5CMIBC_Bulk_RNAseq%5CATAC-seq%20analysis.assets%5Cimage-20211223212427135.png)
+![image-20211223212427135](Bulk_ATAC_seq_analysis.assets/image-20211223212427135.png)
 
 ## Part1. we should load the packages  and the data we need for following analysis
 
@@ -123,7 +123,7 @@ ggplot(tmp_files, aes_string(x="value", y="category", fill="NES")) + ggridges ::
     xlab(NULL) + ylab(NULL) +  theme_dose()+labs(title=c(" ATAC "))
 ~~~
 
-![image-20211224150911744](C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211224150911744.png)
+![image-20211224150911744](Bulk_ATAC_seq_analysis.assets/image-20211224150911744.png)
 
 ~~~R
 ATAC_Up <- subset(ATAC_all_sig,threshold=="Up")
@@ -155,7 +155,7 @@ data2_left <- setdiff(na.omit(ATAC_Up$SYMBOL),common_gene)
 enrich_pvalue(24223, length(data1_left), length(data2_left), length(common_gene))
 ~~~
 
-![image-20211224151021805](C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211224151021805.png)
+![image-20211224151021805](Bulk_ATAC_seq_analysis.assets/image-20211224151021805.png)
 
 ~~~R
 common_1060_gene <- data.frame(gene=common_gene,group=c("common_1060"))
@@ -191,7 +191,7 @@ ggbarplot(GO_up_RNA_5,
   title="ATAC RNA common1060 Up BP")
 ~~~
 
-![image-20211224151555055](C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211224151555055.png)
+![image-20211224151555055](Bulk_ATAC_seq_analysis.assets/image-20211224151555055.png)
 
 ~~~R
 dev.off()
@@ -218,7 +218,7 @@ data2_left <- setdiff(na.omit(ATAC_Down$SYMBOL),common_gene)
 enrich_pvalue(24223, length(data1_left), length(data2_left), length(common_gene))
 ~~~
 
-![image-20211224151746133](C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211224151746133.png)
+![image-20211224151746133](Bulk_ATAC_seq_analysis.assets/image-20211224151746133.png)
 
 ~~~R
 sudo_Up_gene <- subset(pseudotime_gene,Module=="Module_3" |Module=="Module_4" )
@@ -268,7 +268,7 @@ data2_left <- setdiff(na.omit(bulk_sudo_Up$symbol),common_gene)
 enrich_pvalue(24223, length(data1_left), length(data2_left), length(common_gene))
 ~~~
 
-![image-20211224155836660](Bulk%20ATAC-seq%20analysis.assets/image-20211224155836660.png)
+![image-20211230141617684](Bulk_ATAC_seq_analysis.assets/image-20211230141617684.png)
 
 ~~~R
 common_gene <- intersect(intersect(na.omit(bulk_sudo_Up$symbol),na.omit(common_1060_gene$gene)),na.omit(sudo_Up_gene$symbol))
@@ -308,4 +308,5 @@ ggbarplot(GO_up_RNA_6,
   title="common93 Up BP")
 ~~~
 
-![image-20211224155926645](Bulk%20ATAC-seq%20analysis.assets/image-20211224155926645.png)
+![image-20211230141645485](Bulk_ATAC_seq_analysis.assets/image-20211230141645485.png)
+

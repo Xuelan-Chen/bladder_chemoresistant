@@ -210,7 +210,7 @@ ggviolin(bulk_data[[]], x = "cluster", y = "squamous_sig", fill = "cluster",
     label = "p.format", method = "t.test",label.y=c(1.7, 2.0, 2.3,2.6),paired=FALSE) 
 ~~~
 
-![image-20211223175319307](Bulk%20RNA-seq%20analysis.assets/image-20211223175319307.png)
+![image-20211230141903694](Bulk_RNA_seq_analysis.assets/image-20211230141903694.png)
 
 ~~~R
 ggviolin(bulk_data[[]], x = "cluster", y = "SCC_100", fill = "cluster",
@@ -219,7 +219,7 @@ ggviolin(bulk_data[[]], x = "cluster", y = "SCC_100", fill = "cluster",
     label = "p.format", method = "t.test",label.y=c(1.6, 1.9, 2.2,2.5),paired=FALSE) 
 ~~~
 
-![image-20211223175403664](Bulk%20RNA-seq%20analysis.assets/image-20211223175403664.png)
+![image-20211230141931422](Bulk_RNA_seq_analysis.assets/image-20211230141931422.png)
 
 ~~~R
 my_comparisons <- list( c("Sen", "DDP2"),c("Sen","DDP4"),c("Sen","Res"),c("DDP2","Res"))
@@ -230,7 +230,7 @@ ggbarplot(bulk_data[[]], x = "cluster", y = "Ctsh", fill="cluster",
     scale_fill_manual(values=as.character(jdb_palette("corona",4)))
 ~~~
 
-![image-20211223175433737](Bulk%20RNA-seq%20analysis.assets/image-20211223175433737.png)
+![image-20211230141948749](Bulk_RNA_seq_analysis.assets/image-20211230141948749.png)
 
 ## Part6. RNA-seq4(resistant E64 vs resistant Vehicle) analysis
 
@@ -339,7 +339,7 @@ GO_up_RNA_BP_5 <- head(GO_up_RNA_BP,5)
   title="E64 Up GO BP")
 ~~~
 
-![image-20211223211129279](Bulk%20RNA-seq%20analysis.assets/image-20211223211129279.png)
+![image-20211230142010097](Bulk_RNA_seq_analysis.assets/image-20211230142010097.png)
 
 ~~~R
 GO_up_RNA_MF <- subset(GO_up_RNA,ONTOLOGY=="MF")
@@ -356,7 +356,7 @@ ggbarplot(GO_up_RNA_MF_5,
   title="E64 Up GO MF")
 ~~~
 
-![image-20211223211157291](Bulk%20RNA-seq%20analysis.assets/image-20211223211157291.png)
+![image-20211230142027044](Bulk_RNA_seq_analysis.assets/image-20211230142027044.png)
 
 ## Part7. RNA-seq4 (human DDP) analysis
 
