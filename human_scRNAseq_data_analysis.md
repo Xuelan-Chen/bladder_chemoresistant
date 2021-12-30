@@ -80,7 +80,7 @@ sc_human_merge$xl_anno <- factor(sc_human_merge$xl_anno,levels=c("Tumor1","Tumor
 DimPlot(sc_human_merge, reduction = "tsne", group.by="xl_anno",label = FALSE, pt.size = 0.8,cols=as.character(jdb_palette("corona",10))) 
 ~~~
 
-![image-20211225212319101](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212319101.png)
+![image-20211230142534233](human_scRNAseq_data_analysis.assets/image-20211230142534233.png)
 
 ~~~R
 sel_colors <- c("#2c80c5","#e10b2b")
@@ -94,7 +94,7 @@ DimPlot(object = sc_human_tumor_sdo, reduction = "pca",
   cols=col[unique(sc_human_tumor_sdo$xl_anno)])
 ~~~
 
-![image-20211225212442789](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212442789.png)
+![image-20211230142607227](human_scRNAseq_data_analysis.assets/image-20211230142607227.png)
 
 ~~~R
 sel_colors <- c("#2c80c5","#e10b2b")
@@ -108,7 +108,7 @@ DimPlot(object = sc_human_tumor_sdo, reduction = "pca",
   cols=col[unique(sc_human_tumor_sdo$group)])
 ~~~
 
-![image-20211225212504189](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212504189.png)
+![image-20211230142639916](human_scRNAseq_data_analysis.assets/image-20211230142639916.png)
 
 ~~~R
 table(sc_human_tumor_sdo$xl_anno)
@@ -123,13 +123,13 @@ all_data$type <- factor(all_data$type,levels=c("Tumor1","Tumor2"))
 ggplot(all_data, aes(origin,percentage, fill=type))+geom_bar(stat='identity',position='fill') +labs(x = 'origin',y = 'tumor percentage') +theme(axis.title =element_text(size = 16),axis.text =element_text(size = 14, color = 'black'))
 ~~~
 
-![image-20211225212527694](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212527694.png)
+![image-20211230142700662](human_scRNAseq_data_analysis.assets/image-20211230142700662.png)
 
 ~~~R
 XY_FeaturePlot(object = sc_human_tumor_sdo, features = c("CTSH","EPCAM"),pt.size=.6,reduction="pca",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000")) + NoLegend()
 ~~~
 
-![image-20211225212552821](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212552821.png)
+![image-20211230142725666](human_scRNAseq_data_analysis.assets/image-20211230142725666.png)
 
 ~~~R
 E_64_targets <- c("CTSK","CTSL","CTSS","CTSB","CTSH","CAPN1","CAPN2","CAPN3","CAPN5","CAPN6","CAPN7","CAPN8","CAPN9","CAPN10","CAPN11","CAPN12","CAPN13","CAPN14","CAPN15")
@@ -142,7 +142,7 @@ sc_human_tumor_sdo[["E64_targets"]] <- (rowSums(speci_raw))/length(Lineage_marke
 XY_FeaturePlot(object = sc_human_tumor_sdo, features = c("E64_targets") ,pt.size=1,reduction="pca",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))+ NoLegend()
 ~~~
 
-![image-20211225212612788](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212612788.png)
+![image-20211230142737181](human_scRNAseq_data_analysis.assets/image-20211230142737181.png)
 
 ~~~R
 ALL_GSEA_GMT <- read.gmt("./msigdb.v7.1.symbols.gmt")
@@ -157,7 +157,7 @@ sc_human_tumor_sdo[["KERATIN_pathway"]] <- (rowSums(speci_raw))/length(Lineage_m
 XY_FeaturePlot(object = sc_human_tumor_sdo, features = c("KERATIN_pathway") ,pt.size=1,reduction="pca",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))+ NoLegend()
 ~~~
 
-![image-20211225212819830](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212819830.png)
+![image-20211230142752693](human_scRNAseq_data_analysis.assets/image-20211230142752693.png)
 
 ~~~R
 resProgressive_vs_Response <- read.csv(file="./sc-RNAseq/RData_files/TCGA_BLCA_resis_vs_respon_DSEq2_result.csv")
@@ -175,9 +175,7 @@ sc_human_tumor_sdo[[c("TCGA_resis_Up")]] <- (rowSums(speci_raw))/length(Lineage_
 XY_FeaturePlot(object = sc_human_tumor_sdo, features = c("TCGA_resis_Up") ,pt.size=1,reduction="pca",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))+ NoLegend()
 ~~~
 
-
-
-![image-20211225212853292](human%20sc-RNAseq%20data%20analysis.assets/image-20211225212853292.png)
+![image-20211230142805738](human_scRNAseq_data_analysis.assets/image-20211230142805738.png)
 
 ~~~R
 Idents(object = sc_mouse_tumor_sdo)  <- "xl_anno"
@@ -222,5 +220,5 @@ pheatmap(b/rowSums(b),border_color=NA,cluster_cols=F,breaks=the_break,
   color = colorRampPalette(c("navy", "white","firebrick3"))(100),show_rownames=TRUE,cluster_rows=F,main="Cor between models and Patient")
 ~~~
 
-![image-20211225213008860](human%20sc-RNAseq%20data%20analysis.assets/image-20211225213008860.png)
+![image-20211230142829162](human_scRNAseq_data_analysis.assets/image-20211230142829162.png)
 

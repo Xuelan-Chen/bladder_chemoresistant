@@ -1,7 +1,7 @@
 # Bladder chemoresistant
 Acquired semi-squamalization during chemotherapy suggests a differentiation therapy for bladder cancer
 
-![image-20211230135320021](README.assets/image-20211230135320021.png)
+![image-20211230143657635](README.assets/image-20211230143657635.png)
 
 # **Citation**
 

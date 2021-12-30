@@ -80,7 +80,7 @@ Idents(object = sc_mouse_merge)  <- "xl_anno"
 DimPlot(sc_mouse_merge, reduction = "tsne", group.by="xl_anno",label = FALSE, pt.size = 0.8,cols=as.character(jdb_palette("corona",9))) 
 ~~~
 
-![image-20211225213549868](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213549868.png)
+![image-20211230142931937](mouse_scRNAseq_data_analysis.assets/image-20211230142931937.png)
 
 ~~~R
 Idents(object = sc_mouse_merge) <- c("xl_anno")
@@ -93,7 +93,7 @@ sc_mouse_merge$typle <- factor(sc_mouse_merge$typle,levels=c("mouse_Sen","mouse_
 DimPlot(sc_mouse_merge, reduction = "tsne", group.by="tumor_anno",split.by="typle",label = FALSE, pt.size = 0.4,cols=c("#1f77b4","#d62728","#bcb6b6")) 
 ~~~
 
-![image-20211225213617206](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213617206.png)
+![image-20211230142950690](mouse_scRNAseq_data_analysis.assets/image-20211230142950690.png)
 
 ~~~R
 sc_mouse_merge$xl_anno <- factor(sc_mouse_merge$xl_anno,levels=c("endothelia","epithelia","Macrophage","Muscle","Neutrophil","NK","Stromal","Tumor1","Tumor2"))
@@ -101,7 +101,7 @@ marker_gene1 <- c("LUCI2LTR","Gpx2","Col1a2","Col1a1","Nkg7","Cd3g","S100a9","S1
 DotPlot(sc_mouse_merge, features = marker_gene1,group.by="xl_anno", cols=c("#ffffff", "#B30000"),scale = TRUE,col.min = 0,col.max = 5) + RotatedAxis()
 ~~~
 
-![image-20211225213641997](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213641997.png)
+![image-20211230143005416](mouse_scRNAseq_data_analysis.assets/image-20211230143005416.png)
 
 ~~~R
 Idents(object = sc_mouse_merge) <- c("xl_anno")
@@ -116,9 +116,9 @@ sc_mouse_merge$Epcam[which(sc_mouse_merge$tumor_anno=="other")] <- "NA"
 Pesudo_FeaturePlot(object = sc_mouse_merge, features = c("Epcam"),split.by="typle",pt.size=.5,reduction="tsne",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000")) 
 ~~~
 
-![image-20211225213800278](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213800278.png)
+![image-20211230143018466](mouse_scRNAseq_data_analysis.assets/image-20211230143018466.png)
 
-![image-20211225213807701](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213807701.png)
+![image-20211230143028345](mouse_scRNAseq_data_analysis.assets/image-20211230143028345.png)
 
 ~~~R
 sc_mouse_merge$G2M.Score_new <- sc_mouse_merge$G2M.Score
@@ -132,9 +132,9 @@ sc_mouse_merge$G2M.Score_new[which(sc_mouse_merge$tumor_anno=="other")] <- "NA"
 Pesudo_FeaturePlot(object = sc_mouse_merge, features = c("G2M.Score_new"),split.by="typle",pt.size=.5,reduction="tsne",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000")) 
 ~~~
 
-![image-20211225213845078](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213845078.png)
+![image-20211230143043389](mouse_scRNAseq_data_analysis.assets/image-20211230143043389.png)
 
-![image-20211225213852236](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225213852236.png)
+![image-20211230143107086](mouse_scRNAseq_data_analysis.assets/image-20211230143107086.png)
 
 ~~~R
 only_tumor <- FindMarkers(object = sc_mouse_merge, ident.1 = c("Tumor1"), ident.2 = c("Tumor2"), only.pos = FALSE, min.pct = 0.25)
@@ -185,7 +185,9 @@ ggbarplot(Tumor1_GO_up_RNA_5,
   title="Tumor1 GO")
 ~~~
 
-![image-20211225214336775](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214336775.png)
+
+
+![image-20211230143128614](mouse_scRNAseq_data_analysis.assets/image-20211230143128614.png)
 
 ~~~R
 Tumor2_GO_down_RNA_5 <- head(subset(GO_BP,Cluster=="Tumor2_entrez"),5)
@@ -200,7 +202,7 @@ ggbarplot(Tumor2_GO_down_RNA_5,
   title="Tumor2 GO")
 ~~~
 
-![image-20211225214407664](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214407664.png)
+![image-20211230143144514](mouse_scRNAseq_data_analysis.assets/image-20211230143144514.png)
 
 ~~~R
 sel_colors <- c("#2c80c5","#e10b2b")
@@ -214,7 +216,7 @@ DimPlot(object = sc_mouse_tumor_sdo, reduction = "dm",
   cols=col[unique(sc_mouse_tumor_sdo$xl_anno)]) +labs(title="tumor")
 ~~~
 
-![image-20211225214503035](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214503035.png)
+![image-20211230143156017](mouse_scRNAseq_data_analysis.assets/image-20211230143156017.png)
 
 ~~~R
 sel_colors <- c("#2c80c5","#F2673A","#e10b2b")
@@ -228,13 +230,13 @@ DimPlot(object = sc_mouse_tumor_sdo, reduction = "dm",
   cols=col[unique(sc_mouse_tumor_sdo$renew)])
 ~~~
 
-![image-20211225214535258](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214535258.png)
+![image-20211230143207902](mouse_scRNAseq_data_analysis.assets/image-20211230143207902.png)
 
 ~~~R
 XY_FeaturePlot(object = sc_mouse_tumor_sdo, features = c("slingPseudotime_1") ,pt.size=.4,nrow=1,reduction="dm",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))+ NoAxes()
 ~~~
 
-![image-20211225214557477](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214557477.png)
+![image-20211230143223589](mouse_scRNAseq_data_analysis.assets/image-20211230143223589.png)
 
 ~~~R
 E_64_targets <- c("CTSK","CTSL","CTSS","CTSB","CTSH","CAPN1","CAPN2","CAPN3","CAPN5","CAPN6","CAPN7","CAPN8","CAPN9","CAPN10","CAPN11","CAPN12","CAPN13","CAPN14","CAPN15")
@@ -257,7 +259,7 @@ ggplot(plot_data, aes(order, E_64_targets,color=orig.ident)) +
   theme_classic() + geom_smooth(se=TRUE) + labs(title="E_64_targets")
 ~~~
 
-![image-20211225214627524](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214627524.png)
+![image-20211230143236878](mouse_scRNAseq_data_analysis.assets/image-20211230143236878.png)
 
 ~~~R
 squa_marker <- c("Cd44","Krt6a","Krt14","Tgm1","Pi3","Dsc3","Gsdmc","Trp63","Col17a1","Krt5","Krt17","Krt1","Cdh3","Krt16","Krt6b","Krt6c") 
@@ -269,7 +271,7 @@ sc_mouse_tumor_sdo[["squa_marker"]] <- (rowSums(speci_raw))/length(Lineage_marke
 XY_FeaturePlot(object = sc_mouse_tumor_sdo, features = c("squa_marker"),pt.size=.5,reduction="dm",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))
 ~~~
 
-![image-20211225214920302](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214920302.png)
+![image-20211230143253842](mouse_scRNAseq_data_analysis.assets/image-20211230143253842.png)
 
 ~~~R
 resProgressive_vs_Response <- as.data.frame(resProgressive_vs_Response)
@@ -288,7 +290,7 @@ sc_mouse_tumor_sdo[[c("TCGA_resis_Up")]] <- (rowSums(speci_raw))/length(Lineage_
 XY_FeaturePlot(object = sc_mouse_tumor_sdo, features = c("TCGA_resis_Up") ,pt.size=.15,reduction="dm",label=T,cols = CustomPalette(low ="#007BBF", mid = "#FFF485",high = "#FF0000"))+ NoLegend()
 ~~~
 
-![image-20211225214948166](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225214948166.png)
+![image-20211230143307734](mouse_scRNAseq_data_analysis.assets/image-20211230143307734.png)
 
 ~~~R
 ALL_GSEA_GMT <- read.gmt("./msigdb.v7.1.symbols.gmt")
@@ -329,7 +331,7 @@ ggplot(tmp_files_data, aes_string(x="value", y="category", fill="NES")) + ggridg
     xlab(NULL) + ylab(NULL) +  theme_dose()+labs(title=c(" sc-mouse tumor2 vs tumor1"))
 ~~~
 
-![image-20211225215811825](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225215811825.png)
+![image-20211230143324642](mouse_scRNAseq_data_analysis.assets/image-20211230143324642.png)
 
 ~~~R
 hsg_genelist <- mouse_sudo_FC1$avg_logFC
@@ -348,4 +350,5 @@ ggplot(tmp_files_data, aes_string(x="value", y="category", fill="NES")) + ggridg
     xlab(NULL) + ylab(NULL) +  theme_dose()+labs(title=c("sc-mouse tumor2 vs tumor1"))
 ~~~
 
-![image-20211225220047218](mouse%20sc-RNAseq%20data%20analysis.assets/image-20211225220047218.png)
+![image-20211230143342307](mouse_scRNAseq_data_analysis.assets/image-20211230143342307.png)
+

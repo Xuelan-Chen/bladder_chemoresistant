@@ -99,7 +99,7 @@ ggplot(tmp_files, aes_string(x="value", y="category", fill="NES")) + ggridges ::
     xlab(NULL) + ylab(NULL) +  theme_dose()+labs(title=c(" proteomics "))
 ~~~
 
-![image-20211224214253070](Proteomics%20analysis.assets/image-20211224214253070.png)
+![image-20211230143436031](Proteomics_analysis.assets/image-20211230143436031.png)
 
 ~~~R
 proteomics_data_common93 <- XY_subset(Proteomics_data,"Gene.name",common_93_gene$gene)
@@ -114,7 +114,7 @@ the_break<-c(break1,break2[-1])
 pheatmap(data_plot_zscore,show_rownames=TRUE,border_color=NA,cluster_cols=F,cluster_row=FALSE,cellwidth=30,cellheight=6,fontsize=7,color = colorRampPalette(c("navy", "white","firebrick3"))(50),breaks=the_break)
 ~~~
 
-![image-20211224214339069](Proteomics%20analysis.assets/image-20211224214339069.png)
+![image-20211230143448935](Proteomics_analysis.assets/image-20211230143448935.png)
 
 ~~~R
 JJ_result <- XY_subset(Proteomics_data,"Gene.name",c("Epcam","Krt5","Krt14","Krt6a","Krt17","Krt16","Krt6b","Col17a1","Dsc3","Tgm1","Trp63","Sprr1a","Sprr1b","Dsc2","Dsc1","Tgm3"))
@@ -136,7 +136,7 @@ the_break<-c(break1,break2[-1])
 pheatmap(data,border_color=NA,cluster_rows=F,cluster_cols=F,breaks=the_break,color = colorRampPalette(jdb_palette("brewer_celsius"))(100),show_rownames=TRUE,main="Proteomics semi-squamous")
 ~~~
 
-![image-20211224214412549](Proteomics%20analysis.assets/image-20211224214412549.png)
+![image-20211230143503934](Proteomics_analysis.assets/image-20211230143503934.png)
 
 ~~~R
 JJ_result <- XY_subset(Proteomics_data,"Gene.name",c("Krt5","Krt14","Krt6a","Krt17","Krt16","Krt6b","Col17a1","Dsc3","Tgm1","Dsc1","Dsc2","Trp63","Sprr1a","Sprr1b"))
@@ -151,7 +151,7 @@ the_break<-c(break1,break2[-1])
 pheatmap(heatmap_resdeal_all_1_zscore,border_color=NA,cluster_rows=F,cluster_cols=F,cellwidth=15,fontsize=10,cellheight=20, legend_labels = c("-1.5", "0", "1.5"),color = colorRampPalette(c("navy", "white","firebrick3"))(50),show_rownames=TRUE)
 ~~~
 
-![image-20211224214440386](Proteomics%20analysis.assets/image-20211224214440386.png)
+![image-20211230143516549](Proteomics_analysis.assets/image-20211230143516549.png)
 
 ~~~R
 E64_vs_Vehicle_Up$entrez <- mapIds(org.Mm.eg.db,
@@ -187,7 +187,7 @@ ggbarplot(GO_up_RNA_BP_5,
   title="Proteomics E64 Up GO BP")
 ~~~
 
-![image-20211224214628806](Proteomics%20analysis.assets/image-20211224214628806.png)
+![image-20211230143531166](Proteomics_analysis.assets/image-20211230143531166.png)
 
 ~~~R
 JJ_result <- XY_subset(Proteomics_data,"Gene.name",c("Gsdmc","Gsdmd","Gsdma","Casp8"))
@@ -202,7 +202,7 @@ the_break<-c(break1,break2[-1])
 pheatmap(heatmap_resdeal_all_1_zscore,border_color=NA,cluster_rows=F,cluster_cols=F,cellwidth=15,fontsize=10,cellheight=20, legend_labels = c("-1.5", "0", "1.5"),color = colorRampPalette(c("navy", "white","firebrick3"))(50),show_rownames=TRUE)
 ~~~
 
-![image-20211224214721957](Proteomics%20analysis.assets/image-20211224214721957.png)
+![image-20211230143540931](Proteomics_analysis.assets/image-20211230143540931.png)
 
 ~~~R
 ALL_GSEA_GMT$ont <- as.character(ALL_GSEA_GMT$ont)
@@ -228,7 +228,7 @@ the_break<-c(break1,break2[-1])
 pheatmap(data_plot_zscore,show_rownames=TRUE,border_color=NA,cluster_cols=F,cluster_row=F,cellwidth=30,cellheight=14,fontsize=7,color = colorRampPalette(c("navy", "white","firebrick3"))(50),breaks=the_break)
 ~~~
 
-![image-20211224214811233](Proteomics%20analysis.assets/image-20211224214811233.png)
+![image-20211230143552734](Proteomics_analysis.assets/image-20211230143552734.png)
 
 ~~~R
 rownames(RNA_common) <- RNA_common$symbol
@@ -241,4 +241,4 @@ the_break<-c(break1,break2[-1])
 pheatmap(data_plot_zscore,show_rownames=TRUE,border_color=NA,cluster_cols=F,cluster_row=F,cellwidth=30,cellheight=14,fontsize=7,color = colorRampPalette(c("navy", "white","firebrick3"))(50),breaks=the_break)
 ~~~
 
-![image-20211224214832934](Proteomics%20analysis.assets/image-20211224214832934.png)
+![image-20211230143603118](Proteomics_analysis.assets/image-20211230143603118.png)

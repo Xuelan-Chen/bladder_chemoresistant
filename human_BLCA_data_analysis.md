@@ -122,7 +122,7 @@ ggbarplot(CTSH_data, x = "group", y = "Amp_ratio",color="group",
  position = position_dodge())+ labs(title="CTSH per_Amp_n=3 post_Amp_n=16 per_n=16 post_n=37 p=0.08783")
 ~~~
 
-![image-20211225185908825](J:%5C%E9%99%88%E9%9B%AA%E5%85%B0%5C%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95_WIN%5C%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95_WIN%5Cproject%5C14_bladder_wangmanli%5C2_bladder_resistance%5CMIBC_Bulk_RNAseq%5Chuman_BLCA%20analysis.assets%5Cimage-20211225185908825.png)
+![image-20211225185908825](human_BLCA_data_analysis.assets/image-20211225185908825.png)
 
 ~~~R
 ggpaired(all_data_plot, x = "group", y = "Amp_ratio",
@@ -131,7 +131,7 @@ ggpaired(all_data_plot, x = "group", y = "Amp_ratio",
 stat_compare_means(paired = TRUE)+ labs(title="E64 cluster gene ")
 ~~~
 
-![image-20211225190012422](J:%5C%E9%99%88%E9%9B%AA%E5%85%B0%5C%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95_WIN%5C%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95_WIN%5Cproject%5C14_bladder_wangmanli%5C2_bladder_resistance%5CMIBC_Bulk_RNAseq%5Chuman_BLCA%20analysis.assets%5Cimage-20211225190012422.png)
+![image-20211225190012422](human_BLCA_data_analysis.assets/image-20211225190012422.png)
 
 ~~~R
 sdo_timegenes$symbol <- rownames(sdo_timegenes)
@@ -187,4 +187,4 @@ ggtheme = theme_bw(),
 risk.table=TRUE)
 ~~~
 
-![image-20211225190058999](C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211225190058999.png)
+![image-20211225190058999](human_BLCA_data_analysis.assets/image-20211225190058999.png)
