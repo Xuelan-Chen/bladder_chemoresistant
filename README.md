@@ -1,7 +1,7 @@
 # Bladder chemoresistant
 Acquired semi-squamalization during chemotherapy suggests a differentiation therapy for bladder cancer
 
-![image-20211229151932181](READ%20ME.assets/image-20211229151932181.png)
+![image-20211230135320021](README.assets/image-20211230135320021.png)
 
 # **Citation**
 
@@ -15,7 +15,7 @@ You could downloaded processed data from XXX
 
 The tree map showed the files detail as following: 
 
-~~~R
+~~~linux
 
 ├── ATAC-seq
 │   ├── ATAC_resis_1_FKDL210223005-1a_1.fq.gz
@@ -249,25 +249,25 @@ And the detail lists were displayed as following:
 
 ## Codes of Bulk RNA-seq analysis
 
-[Bulk_RNA ](Bulk RNA-seq analysis.md) is the code for Bulk RNA-seq analysis in mouse/human chemotherapy-naive and resistant  data.  And you could access this code by click [here](Bulk RNA-seq analysis.md).
+[Bulk_RNA ](Bulk_RNA_seq_analysis.md) is the code for Bulk RNA-seq analysis in mouse/human chemotherapy-naive and resistant  data.  And you could access this code by click [here](Bulk_RNA_seq_analysis.md).
 
 ## Codes of Bulk ATAC-seq analysis
 
-[Bulk_ATAC ](Bulk ATAC-seq analysis.md) is the code for Bulk  ATAC-seq analysis in mouse chemotherapy-naive and resistant  data.  And you could access this code by click [here](Bulk ATAC-seq analysis.md).
+[Bulk_ATAC ](Bulk_ATAC_seq_analysis.md) is the code for Bulk  ATAC-seq analysis in mouse chemotherapy-naive and resistant  data.  And you could access this code by click [here](Bulk_ATAC_seq_analysis.md).
 
 ## Codes of Proteomics analysis
 
-[Proteomics ](Proteomics analysis.md) is the code for Proteomics analysis in mouse chemotherapy-naive and resistant  data.  And you could access this code by click [here](Proteomics analysis.md).
+[Proteomics ](Proteomics_analysis.md) is the code for Proteomics analysis in mouse chemotherapy-naive and resistant  data.  And you could access this code by click [here](Proteomics_analysis.md).
 
 ## Codes of Single cell RNA-seq analysis
 
-[mouse sc-RNAseq](mouse sc-RNAseq data analysis.md) is the code for mouse chemotherapy-naive and resistant samples. And you could access this code by click [here](mouse sc-RNAseq data analysis.md).
+[mouse sc-RNAseq](mouse_scRNAseq_data_analysis.md) is the code for mouse chemotherapy-naive and resistant samples. And you could access this code by click [here](mouse_scRNAseq_data_analysis.md).
 
-[human sc-RNAseq](human sc-RNAseq data analysis.md) is the code for human chemotherapy-naive and resistant samples. And you could access this code by click [here](human sc-RNAseq data analysis.md).
+[human sc-RNAseq](human_scRNAseq_data_analysis.md) is the code for human chemotherapy-naive and resistant samples. And you could access this code by click [here](human_scRNAseq_data_analysis.md).
 
 ## Codes of  TCGA-BLCA analysis
 
-[TCGA-BLCA ](human BLCA data analysis.md) is the code for TCGA-BLCA analysis.  And you could access this code by click [here](human BLCA data analysis.md).
+[TCGA-BLCA ](human_BLCA_data_analysis.md) is the code for TCGA-BLCA analysis.  And you could access this code by click [here](human_BLCA_data_analysis.md).
 
 
 
